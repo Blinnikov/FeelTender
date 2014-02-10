@@ -1,6 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Dependencies>
   <Dependency>
+    <ExtensionId>CKEditor</ExtensionId>
+    <LoaderName>DynamicExtensionLoader</LoaderName>
+    <VirtualPath>~/Modules/CKEditor/CKEditor.csproj</VirtualPath>
+    <Hash>cf998f9e453c7dff</Hash>
+  </Dependency>
+  <Dependency>
+    <ExtensionId>Contrib.ImageField</ExtensionId>
+    <LoaderName>DynamicExtensionLoader</LoaderName>
+    <VirtualPath>~/Modules/Contrib.ImageField/Contrib.ImageField.csproj</VirtualPath>
+    <Hash>639e9295ae2bbeaa</Hash>
+  </Dependency>
+  <Dependency>
+    <ExtensionId>EMS.PageTitleOverride</ExtensionId>
+    <LoaderName>DynamicExtensionLoader</LoaderName>
+    <VirtualPath>~/Modules/EMS.PageTitleOverride/EMS.PageTitleOverride.csproj</VirtualPath>
+    <Hash>fbb1e6e2bea8bcfc</Hash>
+  </Dependency>
+  <Dependency>
     <ExtensionId>Lucene</ExtensionId>
     <LoaderName>PrecompiledExtensionLoader</LoaderName>
     <VirtualPath>~/Modules/Lucene/bin/Lucene.dll</VirtualPath>
@@ -331,6 +349,12 @@
     <Hash>dbaa2ea67ed43d7a</Hash>
   </Dependency>
   <Dependency>
+    <ExtensionId>SH.Robots</ExtensionId>
+    <LoaderName>DynamicExtensionLoader</LoaderName>
+    <VirtualPath>~/Modules/SH.Robots/SH.Robots.csproj</VirtualPath>
+    <Hash>69e8886a5b939de2</Hash>
+  </Dependency>
+  <Dependency>
     <ExtensionId>SysCache</ExtensionId>
     <LoaderName>PrecompiledExtensionLoader</LoaderName>
     <VirtualPath>~/Modules/SysCache/bin/SysCache.dll</VirtualPath>
@@ -347,5 +371,17 @@
     <LoaderName>PrecompiledExtensionLoader</LoaderName>
     <VirtualPath>~/Modules/Upgrade/bin/Upgrade.dll</VirtualPath>
     <Hash>4a4e8cefc2021aa2</Hash>
+  </Dependency>
+  <Dependency>
+    <ExtensionId>Vandelay.Meta</ExtensionId>
+    <LoaderName>DynamicExtensionLoader</LoaderName>
+    <VirtualPath>~/Modules/Vandelay.Meta/Vandelay.Meta.csproj</VirtualPath>
+    <Hash>6c3e0fa03cafc51c</Hash>
+  </Dependency>
+  <Dependency>
+    <ExtensionId>WebAdvanced.Sitemap</ExtensionId>
+    <LoaderName>DynamicExtensionLoader</LoaderName>
+    <VirtualPath>~/Modules/WebAdvanced.Sitemap/WebAdvanced.Sitemap.csproj</VirtualPath>
+    <Hash>bd70cd6592e20944</Hash>
   </Dependency>
 </Dependencies>

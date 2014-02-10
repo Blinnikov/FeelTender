@@ -1,7 +1,7 @@
 Name: Tiffany
-Author: The Orchard Team
+Author: Igor Blinnikov
 Website: http://www.orchardproject.net
-Description: Description for the theme
+Description: Special for Feel Tender site
 Version: 1.0
 # todo: provide tags
 # Tags: Classic, Serif
