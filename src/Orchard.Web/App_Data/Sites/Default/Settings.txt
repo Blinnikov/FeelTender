@@ -1,0 +1,12 @@
+State: Running
+Themes: 
+Name: Default
+DataProvider: SqlServer
+DataConnectionString: Server=sql10-12-rus.corp.parking.ru;Database=Blinnikov_6;User ID=Blinnikov_6;Password=5D#64)iJ22
+DataTablePrefix: ft
+RequestUrlHost: null
+RequestUrlPrefix: null
+EncryptionAlgorithm: AES
+EncryptionKey: B8D05EC663FB03C9E54925CBEC8229EE1F5BE2B943D30EF0B2FA14E7F4B44470
+HashAlgorithm: HMACSHA256
+HashKey: 9C72D514C1DE9DE61A6C872923E150E243A84B1ED6A73AF04A7C483810FA0B761CBD52A594A668D07F61E0FBE440DA5A247A311071D62C2255A650B3355C46A5
