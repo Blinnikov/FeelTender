@@ -50,6 +50,7 @@ build/
 [Bb]in/
 [Oo]bj/
 App_Data/
+*.dll
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
