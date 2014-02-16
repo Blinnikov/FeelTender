@@ -1,0 +1,103 @@
+﻿@{
+    Style.Include("style.css");
+}
+
+
+<div class="container">
+    
+    
+    <div class="top">
+        <div class="limit">
+            <span class="phone">+8(495) 123-12-12</span>
+            <span class="phone">+8(495) 123-12-12</span>
+            Звонок по РФ бесплатно
+        </div>
+    </div>
+    <div class="header">
+        <div class="limit">
+            <a href="#" class="logo">FeelTender</a>
+            <div class="h_right">
+                <div class="social">
+                    <a href="#"><img src="@Url.Content(Html.ThemePath(WorkContext.CurrentTheme, "/Styles/images/icon_google.png"))" /></a>
+                    <a href="#"><img src="@Url.Content(Html.ThemePath(WorkContext.CurrentTheme, "/Styles/images/icon_twitter.png"))" /></a>
+                    <a href="#"><img src="@Url.Content(Html.ThemePath(WorkContext.CurrentTheme, "/Styles/images/icon_facebook.png"))" /></a>
+                    <a href="#"><img src="@Url.Content(Html.ThemePath(WorkContext.CurrentTheme, "/Styles/images/icon_vk.png"))" /></a>
+                </div>
+                @*<div class="login">
+                    <div class="form_top">
+                        <a href="#" class="register">Регистрация</a>
+                        <strong>Вход на сайт</strong>
+                        <div class="clr"></div>
+                    </div>
+                    <form action="#" method="get">
+                        <span class="input field_login">
+                            <input placeholder="Введите имя" type="text" name="login" />
+                        </span>
+                        <span class="input field_password">
+                            <input placeholder="Введите пароль" type="password" name="password" />
+                        </span>
+                        <div class="form_bottom">
+                            <input type="submit" value="авторизоваться" />
+                            <a class="forgot" href="#">Забыл пароль?</a>
+                            <div class="clr"></div>
+                        </div>
+                    </form>
+                </div>*@
+                <div class="clr"></div>
+                <div class="top_menu">
+                    <ul>
+                        <li class="first">
+                            <a href="#">Планировка</a>
+                            <ul class="sub">
+                                <li class="triangle"></li>
+                                <li class="first"><a href="#">Ведущие / Тамады</a></li>
+                                <li><a href="#">Видео / Фотографы</a></li>
+                                <li><a href="#">Диджеи</a></li>
+                                <li><a href="#">Видео / Фотографы</a></li>
+                                <li><a href="#">Диджеи</a></li>
+                                <li><a href="#">Видео / Фотографы</a></li>
+                                <li><a href="#">Диджеи</a></li>
+                                <li class="last"><a href="#">Ещё раздел Костюмы</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Вендоры</a>
+                            <ul class="sub">
+                                <li class="triangle"></li>
+                                <li class="first"><a href="#">Ведущие / Тамады</a></li>
+                                <li><a href="#">Видео / Фотографы</a></li>
+                                <li><a href="#">Диджеи</a></li>
+                                <li class="last"><a href="#">Ещё раздел Костюмы</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Платья и костюмы</a>
+                            <ul class="sub">
+                                <li class="triangle"></li>
+                                <li class="first"><a href="#">Ведущие / Тамады</a></li>
+                                <li><a href="#">Видео / Фотографы</a></li>
+                                <li><a href="#">Диджеи</a></li>
+                                <li><a href="#">Видео / Фотографы</a></li>
+                                <li><a href="#">Диджеи</a></li>
+                                <li class="last"><a href="#">Ещё раздел Костюмы</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Фото</a></li>
+                        <li><a href="#">Форум</a></li>
+                        <li><a href="#">Путешествие</a></li>
+                        <li class="last"><a href="#">Другое</a></li>
+                    </ul>
+                    <div class="clr"></div>
+                </div>
+            </div>
+            <div class="clr"></div>
+        </div>
+    </div>
+    
+
+    @if (Model.Content != null) {
+        <div class="content">
+            @Display(Model.Content)
+        </div>
+    }
+</div>

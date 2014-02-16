@@ -1,6 +1,6 @@
 Name: Tiffany
 Author: Igor Blinnikov
-Website: http://www.orchardproject.net
+Website: http://feeltender.com
 Description: Special for Feel Tender site
 Version: 1.0
 # todo: provide tags
