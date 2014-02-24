@@ -1,5 +1,62 @@
-﻿@{
-    Style.Include("style.css");
+﻿@using System
+@functions {
+    // To support the layout classifaction below. Implementing as a razor function because we can, could otherwise be a Func<string[], string, string> in the code block following.
+    string CalcuClassify(string[] zoneNames, string classNamePrefix)
+    {
+        var zoneCounter = 0;
+        var zoneNumsFilled = string.Join("", zoneNames.Select(zoneName => { ++zoneCounter; return Model[zoneName] != null ? zoneCounter.ToString() : ""; }).ToArray());
+        return HasText(zoneNumsFilled) ? classNamePrefix + zoneNumsFilled : "";
+    }
+}
+@{
+    /* Global includes for the theme
+    ***************************************************************/
+
+    SetMeta(httpEquiv: "X-UA-Compatible", content: "IE=edge,chrome=1");
+    //Style.Include("//fonts.googleapis.com/css?family=Lobster&subset=latin");
+    //Style.Include("site.css");
+    Style.Include("Site.css");
+
+    /* Some useful shortcuts or settings
+    ***************************************************************/
+
+    Func<dynamic, dynamic> Zone = x => Display(x); // Zone as an alias for Display to help make it obvious when we're displaying zones
+
+    /* Layout classification based on filled zones
+    ***************************************************************/
+
+    //Add classes to the wrapper div to toggle aside widget zones on and off
+    var asideClass = CalcuClassify(new[] { "AsideFirst", "AsideSecond" }, "aside-"); // for aside-1, aside-2 or aside-12 if any of the aside zones are filled
+    if (HasText(asideClass))
+    {
+        Model.Classes.Add(asideClass);
+    }
+
+    //Add classes to the wrapper div to toggle tripel widget zones on and off
+    var tripelClass = CalcuClassify(new[] { "TripelFirst", "TripelSecond", "TripelThird" }, "tripel-"); // for tripel-1, triple-2, etc. if any of the tripel zones are filled
+    if (HasText(tripelClass))
+    {
+        Model.Classes.Add(tripelClass);
+    }
+
+    //Add classes to the wrapper div to toggle quad widget zones on and off
+    var footerQuadClass = CalcuClassify(new[] { "FooterQuadFirst", "FooterQuadSecond", "FooterQuadThird", "FooterQuadFourth" }, "split-"); // for quad-1, quad-2, etc. if any of the quad zones are filled
+    if (HasText(footerQuadClass))
+    {
+        Model.Classes.Add(footerQuadClass);
+    }
+
+    /* Inserting some ad hoc shapes
+    ***************************************************************/
+
+    WorkContext.Layout.Header.Add(New.Branding(), "5"); // Site name and link to the home page
+    WorkContext.Layout.Footer.Add(New.User(), "10"); // Login and dashboard links
+
+    /* Last bit of code to prep the layout wrapper
+    ***************************************************************/
+
+    Model.Id = "layout-wrapper";
+    var tag = Tag(Model, "div"); // using Tag so the layout div gets the classes, id and other attributes added to the Model
 }
 
 
@@ -13,9 +70,15 @@
             Звонок по РФ бесплатно
         </div>
     </div>
+    
+    
+
     <div class="header">
         <div class="limit">
-            <a href="#" class="logo">FeelTender</a>
+            @if (Model.Header != null)
+{
+            @Zone(Model.Header)
+}
             <div class="h_right">
                 <div class="social">
                     <a href="#"><img src="@Url.Content(Html.ThemePath(WorkContext.CurrentTheme, "/Styles/images/icon_google.png"))" /></a>
@@ -45,7 +108,10 @@
                 </div>*@
                 <div class="clr"></div>
                 <div class="top_menu">
-                    <ul>
+                    @if (Model.Navigation != null) {
+                        @Zone(Model.Navigation)
+                    }
+                    @*<ul>
                         <li class="first">
                             <a href="#">Планировка</a>
                             <ul class="sub">
@@ -86,8 +152,8 @@
                         <li><a href="#">Форум</a></li>
                         <li><a href="#">Путешествие</a></li>
                         <li class="last"><a href="#">Другое</a></li>
-                    </ul>
-                    <div class="clr"></div>
+                    </ul>*@
+    <div class="clr"></div>
                 </div>
             </div>
             <div class="clr"></div>
@@ -100,4 +166,95 @@
             @Display(Model.Content)
         </div>
     }
+</div>
+<div class="footer">
+    <div class="limit">
+        <img class="logo" src="@Url.Content(Html.ThemePath(WorkContext.CurrentTheme, "/Styles/images/logo.png"))" alt="" />
+        <div class="links">
+            <div>
+                <span>Ведущие/Тамады:</span>
+                <a href="#">Ведущие</a> | <a href="#">Тамада</a>
+                <a href="#">Ещё раздел</a> |
+                <a href="#">2 раздела</a> |
+                <a href="#">Тамада</a> |
+                <a href="#">Ещё раздел</a> |
+                <a href="#">2 раздела</a> |
+                <a href="#">Тамада</a>
+            </div>
+            <div>
+                <span>Ведущие/Тамады:</span>
+                <a href="#">Ведущие</a> | <a href="#">Тамада</a>
+                <a href="#">Ещё раздел</a> |
+                <a href="#">2 раздела</a> |
+                <a href="#">Тамада</a> |
+                <a href="#">Ещё раздел</a> |
+                <a href="#">2 раздела</a> |
+                <a href="#">Тамада</a>
+            </div>
+            <div>
+                <span>Ведущие/Тамады:</span>
+                <a href="#">Ведущие</a> | <a href="#">Тамада</a>
+                <a href="#">Ещё раздел</a> |
+                <a href="#">2 раздела</a> |
+                <a href="#">Тамада</a> |
+                <a href="#">Ещё раздел</a> |
+                <a href="#">2 раздела</a> |
+                <a href="#">Тамада</a>
+            </div>
+            <div>
+                <span>Ведущие/Тамады:</span>
+                <a href="#">Ведущие</a> | <a href="#">Тамада</a>
+                <a href="#">Ещё раздел</a> |
+                <a href="#">2 раздела</a> |
+                <a href="#">Тамада</a> |
+                <a href="#">Ещё раздел</a> |
+                <a href="#">2 раздела</a> |
+                <a href="#">Тамада</a>
+            </div>
+            <div>
+                <span>Ведущие/Тамады:</span>
+                <a href="#">Ведущие</a> | <a href="#">Тамада</a>
+                <a href="#">Ещё раздел</a> |
+                <a href="#">2 раздела</a> |
+                <a href="#">Тамада</a> |
+                <a href="#">Ещё раздел</a> |
+                <a href="#">2 раздела</a> |
+                <a href="#">Тамада</a>
+            </div>
+            <div id="footer-quad" class="group">
+                @if (Model.FooterQuadFirst != null)
+                {
+                    <div id="footer-quad-first">
+                        @Zone(Model.FooterQuadFirst)
+                    </div>
+                }
+                @if (Model.FooterQuadSecond != null)
+                {
+                    <div id="footer-quad-second">
+                        @Zone(Model.FooterQuadSecond)
+                    </div>
+                }
+                @if (Model.FooterQuadThird != null)
+                {
+                    <div id="footer-quad-third">
+                        @Zone(Model.FooterQuadThird)
+                    </div>
+                }
+                @if (Model.FooterQuadFourth != null)
+                {
+                    <div id="footer-quad-fourth">
+                        @Zone(Model.FooterQuadFourth)
+                    </div>
+                }
+            </div>
+            @if (Model.Footer != null)
+            {
+                <br/>
+                <div id="footer-sig" class="group">
+                    @Zone(Model.Footer)
+                </div>
+            }
+        </div>
+        <div class="clr"></div>
+    </div>
 </div>

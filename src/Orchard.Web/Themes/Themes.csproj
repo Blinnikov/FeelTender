@@ -161,6 +161,9 @@
     <Content Include="Tiffany\Styles\images\tour_search_countries.png" />
     <Content Include="Tiffany\Styles\images\welcome.png" />
     <Content Include="Tiffany\Styles\images\work_add.jpg" />
+    <Content Include="Tiffany\Styles\Site.css">
+      <DependentUpon>Site.less</DependentUpon>
+    </Content>
     <Content Include="Tiffany\Styles\style.css" />
     <Content Include="Tiffany\Web.config" />
     <Content Include="Tiffany\Views\Web.config" />
@@ -298,6 +301,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Tiffany\Views\Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tiffany\Views\Branding.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tiffany\Views\Menu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tiffany\Styles\Site.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tiffany\Styles\Site.css.map">
+      <DependentUpon>Site.css</DependentUpon>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

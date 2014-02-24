@@ -1,7 +1,8 @@
 Name: Tiffany
 Author: Igor Blinnikov
+BaseTheme: TheThemeMachine
 Website: http://feeltender.com
 Description: Special for Feel Tender site
-Version: 1.0
+Version: 1.01
 # todo: provide tags
 # Tags: Classic, Serif

@@ -1,4 +1,5 @@
-﻿@functions {
+﻿@using System
+@functions {
     // To support the layout classifaction below. Implementing as a razor function because we can, could otherwise be a Func<string[], string, string> in the code block following.
     string CalcuClassify(string[] zoneNames, string classNamePrefix) {
         var zoneCounter = 0;
