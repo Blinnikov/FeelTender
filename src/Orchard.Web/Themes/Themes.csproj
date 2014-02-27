@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Tiffany\Content\favicon.ico" />
     <Content Include="Tiffany\Static\about.html" />
     <Content Include="Tiffany\Static\addmessage.html" />
     <Content Include="Tiffany\Static\articles.html" />
@@ -315,6 +316,9 @@
     <Content Include="Tiffany\Styles\Site.css.map">
       <DependentUpon>Site.css</DependentUpon>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tiffany\Views\Document.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
