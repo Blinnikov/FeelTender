@@ -1,0 +1,25 @@
+﻿@using System.Web
+@{
+    var imagePreview = Url.Content(Html.ThemePath(WorkContext.CurrentTheme, "/Styles/images/content4.png"));
+    var fileName = Model.ContentItem.Page.Preview.FileName;
+    if (!string.IsNullOrEmpty(fileName)) {
+        imagePreview = fileName;
+    }
+
+    string bodyHtml = Model.ContentItem.BodyPart.Text;
+    var body = new HtmlString(Html.Excerpt(bodyHtml, 200).ToString());
+}
+
+<div class="article">
+    <a href="@Model.ContentItem.AutoroutePart.DisplayAlias" class="image">
+        <img width="182" height="163" src="@Url.Content(imagePreview)" alt="@Model.Title">
+    </a>
+    <div class="info">
+        <a class="title" href="@Model.ContentItem.AutoroutePart.DisplayAlias">@Model.ContentItem.TitlePart.Title</a>
+        <p>@body</p>
+        <div class="links">
+            <a href="@Model.ContentItem.AutoroutePart.DisplayAlias" class="more">Читать полностью</a> @*<a href="#" class="comments">Комментариев (5)</a>*@
+        </div>
+    </div>
+    <div class="clr"></div>
+</div>

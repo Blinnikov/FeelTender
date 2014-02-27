@@ -120,6 +120,7 @@
     <Content Include="Tiffany\Styles\images\header.jpg" />
     <Content Include="Tiffany\Styles\images\icon_facebook.png" />
     <Content Include="Tiffany\Styles\images\icon_google.png" />
+    <Content Include="Tiffany\Styles\images\icon_instagram.png" />
     <Content Include="Tiffany\Styles\images\icon_twitter.png" />
     <Content Include="Tiffany\Styles\images\icon_vk.png" />
     <Content Include="Tiffany\Styles\images\input1.png" />
@@ -319,6 +320,45 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Tiffany\Views\Document.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tiffany\Views\Content-Page.Summary.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tiffany\Styles\fonts\cuprum-regular-webfont.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tiffany\Styles\fonts\cuprum-regular-webfont.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tiffany\Styles\fonts\cuprum-regular-webfont.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tiffany\Styles\fonts\neosanspro-bold-webfont.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tiffany\Styles\fonts\neosanspro-bold-webfont.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tiffany\Styles\fonts\neosanspro-bold-webfont.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tiffany\Styles\fonts\neosanspro-light-webfont.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tiffany\Styles\fonts\neosanspro-light-webfont.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tiffany\Styles\fonts\neosanspro-light-webfont.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tiffany\Styles\fonts\neosanspro-regular-webfont.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tiffany\Styles\fonts\neosanspro-regular-webfont.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tiffany\Styles\fonts\neosanspro-regular-webfont.woff" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

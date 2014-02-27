@@ -39,29 +39,29 @@ input {
 }
 @font-face {
   font-family: 'neo_sans_probold';
-  src: url('../fonts/neosanspro-bold-webfont.eot');
-  src: url('../fonts/neosanspro-bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/neosanspro-bold-webfont.woff') format('woff'), url('../fonts/neosanspro-bold-webfont.ttf') format('truetype');
+  src: url('../Styles/fonts/neosanspro-bold-webfont.eot');
+  src: url('../Styles/fonts/neosanspro-bold-webfont.eot?#iefix') format('embedded-opentype'), url('../Styles/fonts/neosanspro-bold-webfont.woff') format('woff'), url('../Styles/fonts/neosanspro-bold-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'neo_sans_prolight';
-  src: url('../fonts/neosanspro-light-webfont.eot');
-  src: url('../fonts/neosanspro-light-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/neosanspro-light-webfont.woff') format('woff'), url('../fonts/neosanspro-light-webfont.ttf') format('truetype');
+  src: url('../Styles/fonts/neosanspro-light-webfont.eot');
+  src: url('../Styles/fonts/neosanspro-light-webfont.eot?#iefix') format('embedded-opentype'), url('../Styles/fonts/neosanspro-light-webfont.woff') format('woff'), url('../Styles/fonts/neosanspro-light-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'neo_sans_proregular';
-  src: url('../fonts/neosanspro-regular-webfont.eot');
-  src: url('../fonts/neosanspro-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/neosanspro-regular-webfont.woff') format('woff'), url('../fonts/neosanspro-regular-webfont.ttf') format('truetype');
+  src: url('../Styles/fonts/neosanspro-regular-webfont.eot');
+  src: url('../Styles/fonts/neosanspro-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../Styles/fonts/neosanspro-regular-webfont.woff') format('woff'), url('../Styles/fonts/neosanspro-regular-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'cuprumregular';
-  src: url('../fonts/cuprum-regular-webfont.eot');
-  src: url('../fonts/cuprum-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/cuprum-regular-webfont.woff') format('woff'), url('../fonts/cuprum-regular-webfont.ttf') format('truetype');
+  src: url('../Styles/fonts/cuprum-regular-webfont.eot');
+  src: url('../Styles/fonts/cuprum-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../Styles/fonts/cuprum-regular-webfont.woff') format('woff'), url('../Styles/fonts/cuprum-regular-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -285,6 +285,7 @@ input {
 }
 .content {
   padding: 30px 0;
+  min-height: 640px;
 }
 .slide_item {
   height: 292px;

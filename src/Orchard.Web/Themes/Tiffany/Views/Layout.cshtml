@@ -65,9 +65,9 @@
     
     <div class="top">
         <div class="limit">
-            <span class="phone">+8(495) 123-12-12</span>
-            <span class="phone">+8(495) 123-12-12</span>
-            Звонок по РФ бесплатно
+            <span class="phone">+7(911) 940-74-08</span>
+            <span class="phone">+7(981) 890-74-16</span>
+            Звоните в любое время, мы поможем
         </div>
     </div>
     
@@ -81,10 +81,11 @@
             }
             <div class="h_right">
                 <div class="social">
-                    <a href="#"><img src="@Url.Content(Html.ThemePath(WorkContext.CurrentTheme, "/Styles/images/icon_google.png"))" /></a>
-                    <a href="#"><img src="@Url.Content(Html.ThemePath(WorkContext.CurrentTheme, "/Styles/images/icon_twitter.png"))" /></a>
-                    <a href="#"><img src="@Url.Content(Html.ThemePath(WorkContext.CurrentTheme, "/Styles/images/icon_facebook.png"))" /></a>
-                    <a href="#"><img src="@Url.Content(Html.ThemePath(WorkContext.CurrentTheme, "/Styles/images/icon_vk.png"))" /></a>
+                    @*<a href="#"><img src="@Url.Content(Html.ThemePath(WorkContext.CurrentTheme, "/Styles/images/icon_google.png"))" /></a>*@
+                    <a href="http://instagram.com/feeltender"><img src="@Url.Content(Html.ThemePath(WorkContext.CurrentTheme, "/Styles/images/icon_instagram.png"))" /></a>
+                    <a href="http://twitter.com/feeltender"><img src="@Url.Content(Html.ThemePath(WorkContext.CurrentTheme, "/Styles/images/icon_twitter.png"))" /></a>
+                    <a href="http://facebook.com/feeltender"><img src="@Url.Content(Html.ThemePath(WorkContext.CurrentTheme, "/Styles/images/icon_facebook.png"))" /></a>
+                    <a href="http://vk.com/feeltender"><img src="@Url.Content(Html.ThemePath(WorkContext.CurrentTheme, "/Styles/images/icon_vk.png"))" /></a>
                 </div>
                 @*<div class="login">
                     <div class="form_top">
@@ -209,7 +210,7 @@
     <div class="limit">
         <img class="logo" src="@Url.Content(Html.ThemePath(WorkContext.CurrentTheme, "/Styles/images/logo.png"))" alt="" />
         <div class="links">
-            <div>
+            @*<div>
                 <span>Ведущие/Тамады:</span>
                 <a href="#">Ведущие</a> | <a href="#">Тамада</a>
                 <a href="#">Ещё раздел</a> |
@@ -218,46 +219,12 @@
                 <a href="#">Ещё раздел</a> |
                 <a href="#">2 раздела</a> |
                 <a href="#">Тамада</a>
+            </div>*@
+            <div>
+                <span>Feel Tender | Санкт-Петербург | +79119407408</span>
             </div>
             <div>
-                <span>Ведущие/Тамады:</span>
-                <a href="#">Ведущие</a> | <a href="#">Тамада</a>
-                <a href="#">Ещё раздел</a> |
-                <a href="#">2 раздела</a> |
-                <a href="#">Тамада</a> |
-                <a href="#">Ещё раздел</a> |
-                <a href="#">2 раздела</a> |
-                <a href="#">Тамада</a>
-            </div>
-            <div>
-                <span>Ведущие/Тамады:</span>
-                <a href="#">Ведущие</a> | <a href="#">Тамада</a>
-                <a href="#">Ещё раздел</a> |
-                <a href="#">2 раздела</a> |
-                <a href="#">Тамада</a> |
-                <a href="#">Ещё раздел</a> |
-                <a href="#">2 раздела</a> |
-                <a href="#">Тамада</a>
-            </div>
-            <div>
-                <span>Ведущие/Тамады:</span>
-                <a href="#">Ведущие</a> | <a href="#">Тамада</a>
-                <a href="#">Ещё раздел</a> |
-                <a href="#">2 раздела</a> |
-                <a href="#">Тамада</a> |
-                <a href="#">Ещё раздел</a> |
-                <a href="#">2 раздела</a> |
-                <a href="#">Тамада</a>
-            </div>
-            <div>
-                <span>Ведущие/Тамады:</span>
-                <a href="#">Ведущие</a> | <a href="#">Тамада</a>
-                <a href="#">Ещё раздел</a> |
-                <a href="#">2 раздела</a> |
-                <a href="#">Тамада</a> |
-                <a href="#">Ещё раздел</a> |
-                <a href="#">2 раздела</a> |
-                <a href="#">Тамада</a>
+                <span>© feeltender.@Request.Url.Host.Split('.').Last(), @DateTime.Now.Year</span>
             </div>
             <div id="footer-quad" class="group">
                 @if (Model.FooterQuadFirst != null)
