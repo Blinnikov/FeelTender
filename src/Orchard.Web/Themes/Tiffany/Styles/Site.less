@@ -5,11 +5,11 @@
     font-family: Tahoma, Trebuchet MS, sans-serif;
     font-size: 12px;
 }
-ul,p,h1,h2,h3,h4,h5,h6 {
+/*ul,p,h1,h2,h3,h4,h5,h6 {
     margin: 0;
     padding: 0;
     list-style: none;
-}
+}*/
 a {
     outline: none;
     color: #54bdbe;
@@ -212,88 +212,94 @@ input {
         margin: 34px 0 0;
         *margin: 0px 0 0;
 
-        ul > li {
-            position: relative;
-            float: left;
-            background: url('../Styles/images/top_menu_sep.png') right center no-repeat;
-            padding: 0 14px;
-
-            &.first {
-                padding-left: 0;
-
-                .sub {
-                    left: 0px;
-                }
-            }
-
-            &.last {
-                padding-right: 0;
-                background: none;
-            }
-
-            > a {
-                font-family: 'neo_sans_proregular', Tahoma, Trebuchet MS, sans-serif;
-                text-decoration: none;
-                color: #4f4f4f;
-                font-size: 16px;
-            }
-
-            .sub {
-                display: none;
-                position: absolute;
-                z-index: 100;
-                background: #f3f3f3;
-                top: 35px;
-                width: 200px;
-                padding: 2px;
-                border-radius: 8px;
-                border-top-left-radius: 0;
-                border: 1px solid #a3d8d8;
-                left: 15px;
-            }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
         }
 
-            ul > li > a:hover, .header .top_menu > ul > li.sfHover > a {
-                color: #54bdbe;
-            }
+            ul > li {
+                position: relative;
+                float: left;
+                background: url('../Styles/images/top_menu_sep.png') right center no-repeat;
+                padding: 0 14px;
 
-            ul > li .sub li.triangle {
-                width: 15px;
-                height: 15px;
-                display: block;
-                padding: 0;
-                position: absolute;
-                top: -15px;
-                left: -1px;
-                background: url('../Styles/images/sub_triangle.png') no-repeat;
-                border: 0;
-            }
+                &.first {
+                    padding-left: 0;
 
-            ul > li .sub li {
-                height: 25px;
-                padding: 0 0 0 22px;
-                line-height: 25px;
-                border-bottom: 1px solid #ffffff;
-                border-top: 1px solid #dfdfdf;
-                background: url('../Styles/images/services_item.png') 7px center no-repeat;
-
-                a {
-                    color: #5b5b5b;
-                    text-decoration: none;
-
-                    :hover {
-                        color: #54bdbe;
+                    .sub {
+                        left: 0px;
                     }
                 }
+
+                &.last {
+                    padding-right: 0;
+                    background: none;
+                }
+
+                > a {
+                    font-family: 'neo_sans_proregular', Tahoma, Trebuchet MS, sans-serif;
+                    text-decoration: none;
+                    color: #4f4f4f;
+                    font-size: 16px;
+                }
+
+                .sub {
+                    display: none;
+                    position: absolute;
+                    z-index: 100;
+                    background: #f3f3f3;
+                    top: 35px;
+                    width: 200px;
+                    padding: 2px;
+                    border-radius: 8px;
+                    border-top-left-radius: 0;
+                    border: 1px solid #a3d8d8;
+                    left: 15px;
+                }
             }
 
-                ul > li .sub li.first {
-                    border-top: 0;
+                ul > li > a:hover, .header .top_menu > ul > li.sfHover > a {
+                    color: #54bdbe;
                 }
 
-                ul > li .sub li.last {
-                    border-bottom: 0;
+                ul > li .sub li.triangle {
+                    width: 15px;
+                    height: 15px;
+                    display: block;
+                    padding: 0;
+                    position: absolute;
+                    top: -15px;
+                    left: -1px;
+                    background: url('../Styles/images/sub_triangle.png') no-repeat;
+                    border: 0;
                 }
+
+                ul > li .sub li {
+                    height: 25px;
+                    padding: 0 0 0 22px;
+                    line-height: 25px;
+                    border-bottom: 1px solid #ffffff;
+                    border-top: 1px solid #dfdfdf;
+                    background: url('../Styles/images/services_item.png') 7px center no-repeat;
+
+                    a {
+                        color: #5b5b5b;
+                        text-decoration: none;
+
+                        :hover {
+                            color: #54bdbe;
+                        }
+                    }
+                }
+
+                    ul > li .sub li.first {
+                        border-top: 0;
+                    }
+
+                    ul > li .sub li.last {
+                        border-bottom: 0;
+                    }
     }
 .content {
     padding: 30px 0;

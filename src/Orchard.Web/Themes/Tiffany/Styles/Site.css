@@ -1,22 +1,15 @@
-body {
+﻿body {
   margin: 0;
   padding: 0;
   background: url('../Styles/images/body.png') top repeat-x;
   font-family: Tahoma, Trebuchet MS, sans-serif;
   font-size: 12px;
 }
-ul,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
+/*ul,p,h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}*/
 a {
   outline: none;
   color: #54bdbe;
@@ -211,6 +204,11 @@ input {
 .header .top_menu {
   margin: 34px 0 0;
   *margin: 0px 0 0;
+}
+.header .top_menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 .header .top_menu ul > li {
   position: relative;
