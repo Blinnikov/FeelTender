@@ -1,4 +1,4 @@
-﻿@using System.Web
+﻿@using Orchard.ContentManagement
 @{
     var imagePreview = Url.Content(Html.ThemePath(WorkContext.CurrentTheme, "/Styles/images/content4.png"));
     var fileName = Model.ContentItem.Page.Preview.FileName;
@@ -11,14 +11,14 @@
 }
 
 <div class="article">
-    <a href="@Model.ContentItem.AutoroutePart.DisplayAlias" class="image">
+    <a href="@Url.ItemDisplayUrl((IContent)Model.ContentItem)" class="image">
         <img width="182" height="163" src="@Url.Content(imagePreview)" alt="@Model.Title">
     </a>
     <div class="info">
-        <a class="title" href="@Model.ContentItem.AutoroutePart.DisplayAlias">@Model.ContentItem.TitlePart.Title</a>
+        <a class="title" href="@Url.ItemDisplayUrl((IContent)Model.ContentItem)">@Model.ContentItem.TitlePart.Title</a>
         <p>@body</p>
         <div class="links">
-            <a href="@Model.ContentItem.AutoroutePart.DisplayAlias" class="more">Читать полностью</a> @*<a href="#" class="comments">Комментариев (5)</a>*@
+            <a href="@Url.ItemDisplayUrl((IContent)Model.ContentItem)" class="more">Читать полностью</a> @*<a href="#" class="comments">Комментариев (5)</a>*@
         </div>
     </div>
     <div class="clr"></div>
