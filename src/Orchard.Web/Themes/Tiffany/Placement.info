@@ -1,4 +1,11 @@
 <Placement>
+  
+  <Match ContentType="Page">
+    <Match DisplayType="Detail">
+      <Place Fields_Contrib_Image="-"/>
+      <Place Parts_Tags_ShowTags="Content:after"/>
+    </Match>
+  </Match>
   <!-- Customize where the shapes are rendered -->
 
   <!-- 
