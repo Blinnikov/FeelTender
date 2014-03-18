@@ -10,6 +10,12 @@
     padding: 0;
     list-style: none;
 }*/
+h1 {
+  font-family: 'cuprumregular';
+  font-weight: normal;
+  color: #0c9294;
+  font-size: 22px;
+}
 a {
   outline: none;
   color: #54bdbe;
