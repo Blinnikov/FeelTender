@@ -2311,21 +2311,24 @@ div.star-rating{background:transparent!important;overflow:hidden!important}
     margin: 25px 0 0;
     padding: 0 0 20px;
     border-bottom: 1px solid #eeeeee;
+
+    .image {
+        display: block;
+        float: left;
+        width: 182px;
+        height: 163px;
+        margin: 0 13px 0 0;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
 }
 .article.last {
     border: 0;
     padding: 0;
     margin-bottom: 20px;
-}
-.article .image {
-    display: block;
-    float: left;
-    width: 182px;
-    margin: 0 13px 0 0
-}
-.article .image img {
-    width: 100%;
-    height: auto;
 }
 .article .info .title {
     color: #3dafb0;
@@ -2532,7 +2535,7 @@ div.star-rating{background:transparent!important;overflow:hidden!important}
 .tourism2_left p {
     color: #585b5b;
     line-height: 20px;
-    margin: 0 0 15px;
+    /*margin: 0 0 15px;*/
 }
 .tourism2_left .section {
     border-top: 1px solid #d5d5d5;
