@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -9,6 +8,7 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Orchard.Mvc.Extensions;
 using Orchard.OutputCache.Models;
 using Orchard.OutputCache.Services;
 using Orchard.Caching;
@@ -37,8 +37,6 @@ namespace Orchard.OutputCache.Filters {
         private readonly ICacheControlStrategy _cacheControlStrategy;
         private Stream _previousFilter;
 
-        private const string RefreshKey = "__r";
-
         public OutputCacheFilter(
             ICacheManager cacheManager,
             IOutputCacheStorageProvider cacheStorageProvider,
@@ -50,7 +48,8 @@ namespace Orchard.OutputCache.Filters {
             ICacheService cacheService,
             ISignals signals,
             ShellSettings shellSettings,
-            ICacheControlStrategy cacheControlStrategy) {
+            ICacheControlStrategy cacheControlStrategy
+            ) {
             _cacheManager = cacheManager;
             _cacheStorageProvider = cacheStorageProvider;
             _tagCache = tagCache;
@@ -73,11 +72,10 @@ namespace Orchard.OutputCache.Filters {
         private bool _applyCulture;
         private string _cacheKey;
         private string _invariantCacheKey;
-        private string _actionName;
         private DateTime _now;
         private string[] _varyQueryStringParameters;
         private ISet<string> _varyRequestHeaders;
-
+        private bool _transformRedirect;
 
         private WorkContext _workContext;
         private CapturingResponseFilter _filter;
@@ -87,8 +85,6 @@ namespace Orchard.OutputCache.Filters {
         public ILogger Logger { get; set; }
 
         public void OnActionExecuting(ActionExecutingContext filterContext) {
-            // use the action in the cacheKey so that the same route can't return cache for different actions
-            _actionName = filterContext.ActionDescriptor.ActionName;
 
             // apply OutputCacheAttribute logic if defined
             var actionAttributes = filterContext.ActionDescriptor.GetCustomAttributes(typeof(OutputCacheAttribute), true);
@@ -284,12 +280,12 @@ namespace Orchard.OutputCache.Filters {
 
             // no cache content available, intercept the execution results for caching
             _previousFilter = response.Filter;
-            response.Filter = _filter = new CapturingResponseFilter(response.Filter);
+            response.Filter = _filter = new CapturingResponseFilter();
         }
 
         public void OnActionExecuted(ActionExecutedContext filterContext) {
             // handle redirections
-            TransformRedirect(filterContext);
+            _transformRedirect = TransformRedirect(filterContext);
         }
 
         public void OnResultExecuted(ResultExecutedContext filterContext) {
@@ -300,7 +296,8 @@ namespace Orchard.OutputCache.Filters {
                 _filter = null;
                 if (_previousFilter != null) {
                     response.Filter = _previousFilter;
-                }
+                } 
+                return;
             }
             
             // ignore error results from cache
@@ -342,7 +339,7 @@ namespace Orchard.OutputCache.Filters {
                 } 
                 return;
             }
-            
+
             // save the result only if the content can be intercepted
             if (_filter == null) return;
 
@@ -358,8 +355,7 @@ namespace Orchard.OutputCache.Filters {
 
             response.Filter = null;
             response.Write(output);
-
-
+            
             // check if there is a specific rule not to cache the whole route
             var configurations = _cacheService.GetRouteConfigurations();
             var route = filterContext.Controller.ControllerContext.RouteData.Route;
@@ -372,11 +368,31 @@ namespace Orchard.OutputCache.Filters {
                 return;
             }
 
+            // don't cache the result of a POST redirection as it could contain notifications
+            if (_transformRedirect) {
+                return;
+            }
+
+            // don't cache the result if there were some notifications
+            var messagesZone = _workContextAccessor.GetContext(filterContext).Layout.Zones["Messages"];
+            var hasNotifications = messagesZone != null && ((IEnumerable<dynamic>)messagesZone).Any();
+            if (hasNotifications) {
+                return;
+            }
+
             // default duration of specific one ?
             var cacheDuration = configuration != null && configuration.Duration.HasValue ? configuration.Duration.Value : _cacheDuration;
 
+            if (cacheDuration <= 0) {
+                return;
+            }
+
             // include each of the content item ids as tags for the cache entry
             var contentItemIds = _displayedContentItemHandler.GetDisplayed().Select(x => x.ToString(CultureInfo.InvariantCulture)).ToArray();
+
+            if (filterContext.HttpContext.Request.Url == null) {
+                return;
+            }
 
             _cacheItem.ContentType = response.ContentType;
             _cacheItem.StatusCode = response.StatusCode;
@@ -407,6 +423,8 @@ namespace Orchard.OutputCache.Filters {
 
         private bool TransformRedirect(ActionExecutedContext filterContext) {
 
+            // removes the target of the redirection from cache after a POST
+
             if (filterContext.Result == null) {
                 throw new ArgumentNullException();
             }
@@ -421,9 +439,9 @@ namespace Orchard.OutputCache.Filters {
             var redirectUrl = ((RedirectResult)(filterContext.Result)).Url ;
 
             if (!VirtualPathUtility.IsAbsolute(redirectUrl)) {
-                var applicationRoot = filterContext.HttpContext.Request.ToRootUrlString();
+                var applicationRoot = new UrlHelper(filterContext.HttpContext.Request.RequestContext).MakeAbsolute("/");
                 if (redirectUrl.StartsWith(applicationRoot, StringComparison.OrdinalIgnoreCase)) {
-                    redirectUrl = redirectUrl.Substring(applicationRoot.Length);
+                    redirectUrl = "~/" + redirectUrl.Substring(applicationRoot.Length);
                 }
             }
 
@@ -437,26 +455,6 @@ namespace Orchard.OutputCache.Filters {
                 );
 
             _cacheService.RemoveByTag(invariantCacheKey);
-
-            // adding a refresh key so that the next request will not be cached
-            var epIndex = redirectUrl.IndexOf('?');
-            var qs = new NameValueCollection();
-            if (epIndex > 0) {
-                qs = HttpUtility.ParseQueryString(redirectUrl.Substring(epIndex));
-            }
-
-            var refresh = _now.Ticks;
-            qs.Remove(RefreshKey);
-
-            qs.Add(RefreshKey, refresh.ToString("x"));
-            var querystring = "?" + string.Join("&", Array.ConvertAll(qs.AllKeys, k => string.Format("{0}={1}", HttpUtility.UrlEncode(k), HttpUtility.UrlEncode(qs[k]))));
-
-            if (epIndex > 0) {
-                redirectUrl = redirectUrl.Substring(0, epIndex) + querystring;
-            }
-            else {
-                redirectUrl = redirectUrl + querystring;
-            }
 
             filterContext.Result = new RedirectResult(redirectUrl, ((RedirectResult) filterContext.Result).Permanent);
             filterContext.HttpContext.Response.Cache.SetCacheability(HttpCacheability.NoCache);
@@ -515,7 +513,7 @@ namespace Orchard.OutputCache.Filters {
         private string ComputeCacheKey(ControllerContext controllerContext, IEnumerable<KeyValuePair<string, object>> parameters) {
             var url = controllerContext.HttpContext.Request.RawUrl;
             if (!VirtualPathUtility.IsAbsolute(url)) {
-                var applicationRoot = controllerContext.HttpContext.Request.ToRootUrlString();
+                var applicationRoot = new UrlHelper(controllerContext.HttpContext.Request.RequestContext).MakeAbsolute("/");
                 if (url.StartsWith(applicationRoot, StringComparison.OrdinalIgnoreCase)) {
                     url = url.Substring(applicationRoot.Length);
                 }
@@ -537,9 +535,6 @@ namespace Orchard.OutputCache.Filters {
 
             // include the theme in the cache key
             keyBuilder.Append("theme=").Append(theme.ToLowerInvariant()).Append(";");
-
-            // include the theme in the cache key
-            keyBuilder.Append("action=").Append(_actionName.ToLowerInvariant()).Append(";");
 
             if (parameters != null) {
                 foreach (var pair in parameters) {
@@ -597,11 +592,9 @@ namespace Orchard.OutputCache.Filters {
     /// Captures the response stream while writing to it
     /// </summary>
     public class CapturingResponseFilter : Stream {
-        // private readonly Stream _sink;
         private readonly MemoryStream _mem;
 
-        public CapturingResponseFilter(Stream sink) {
-            // _sink = sink;
+        public CapturingResponseFilter() {
             _mem = new MemoryStream();
         }
 
@@ -629,27 +622,21 @@ namespace Orchard.OutputCache.Filters {
         }
 
         public override void SetLength(long length) {
-            // _sink.SetLength(length);
         }
 
         public override void Close() {
-            // _sink.Close();
             _mem.Close();
         }
 
         public override void Flush() {
-            // _sink.Flush();
         }
 
         public override int Read(byte[] buffer, int offset, int count) {
-            // return _sink.Read(buffer, offset, count);
             return count;
         }
 
         // Override the Write method to filter Response to a file. 
         public override void Write(byte[] buffer, int offset, int count) {
-            //Here we will not write to the sink b/c we want to capture
-            // _sink.Write(buffer, offset, count);
 
             //Write out the response to the file.
             _mem.Write(buffer, 0, count);
