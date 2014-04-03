@@ -95,6 +95,122 @@
     <Content Include="TheAdmin\Views\Pager.cshtml" />
     <Content Include="TheAdmin\Views\OrchardVersion.cshtml" />
     <Content Include="TheThemeMachine\ThemeZonePreview.png" />
+    <Content Include="Tiffany\Content\favicon.ico" />
+    <Content Include="Tiffany\Static\about.html" />
+    <Content Include="Tiffany\Static\addmessage.html" />
+    <Content Include="Tiffany\Static\articles.html" />
+    <Content Include="Tiffany\Static\catalog.html" />
+    <Content Include="Tiffany\Static\gallery.html" />
+    <Content Include="Tiffany\Static\index.html" />
+    <Content Include="Tiffany\Static\js\cusel.js" />
+    <Content Include="Tiffany\Static\js\flexslider.js" />
+    <Content Include="Tiffany\Static\js\jcarousel.js" />
+    <Content Include="Tiffany\Static\js\jquery.js" />
+    <Content Include="Tiffany\Static\js\jquery_migrate.js" />
+    <Content Include="Tiffany\Static\js\jquery_rating.js" />
+    <Content Include="Tiffany\Static\js\main.js" />
+    <Content Include="Tiffany\Static\js\superfish.js" />
+    <Content Include="Tiffany\Static\messages.html" />
+    <Content Include="Tiffany\Static\page.html" />
+    <Content Include="Tiffany\Static\profile.html" />
+    <Content Include="Tiffany\Static\projects.html" />
+    <Content Include="Tiffany\Static\reviews.html" />
+    <Content Include="Tiffany\Static\tender.html" />
+    <Content Include="Tiffany\Static\tenders.html" />
+    <Content Include="Tiffany\Static\tourism.html" />
+    <Content Include="Tiffany\Static\tourism2.html" />
+    <Content Include="Tiffany\Static\userinfo.html" />
+    <Content Include="Tiffany\Static\works.html" />
+    <Content Include="Tiffany\Styles\cusel.css" />
+    <Content Include="Tiffany\Styles\flexslider.css" />
+    <Content Include="Tiffany\Styles\images\banner.png" />
+    <Content Include="Tiffany\Styles\images\body.png" />
+    <Content Include="Tiffany\Styles\images\b_action.png" />
+    <Content Include="Tiffany\Styles\images\b_connect.png" />
+    <Content Include="Tiffany\Styles\images\b_filter.png" />
+    <Content Include="Tiffany\Styles\images\b_login.png" />
+    <Content Include="Tiffany\Styles\images\b_more.png" />
+    <Content Include="Tiffany\Styles\images\b_openmessage.png" />
+    <Content Include="Tiffany\Styles\images\b_reply.png" />
+    <Content Include="Tiffany\Styles\images\b_request.png" />
+    <Content Include="Tiffany\Styles\images\b_toursearch.png" />
+    <Content Include="Tiffany\Styles\images\b_upload.png" />
+    <Content Include="Tiffany\Styles\images\calendar.png" />
+    <Content Include="Tiffany\Styles\images\carousel_arrows.png" />
+    <Content Include="Tiffany\Styles\images\close.png" />
+    <Content Include="Tiffany\Styles\images\content1.jpg" />
+    <Content Include="Tiffany\Styles\images\content10.jpg" />
+    <Content Include="Tiffany\Styles\images\content11.jpg" />
+    <Content Include="Tiffany\Styles\images\content2.jpg" />
+    <Content Include="Tiffany\Styles\images\content3.jpg" />
+    <Content Include="Tiffany\Styles\images\content4.jpg" />
+    <Content Include="Tiffany\Styles\images\content4.png" />
+    <Content Include="Tiffany\Styles\images\content5.jpg" />
+    <Content Include="Tiffany\Styles\images\content7.jpg" />
+    <Content Include="Tiffany\Styles\images\content8.jpg" />
+    <Content Include="Tiffany\Styles\images\content9.jpg" />
+    <Content Include="Tiffany\Styles\images\date.png" />
+    <Content Include="Tiffany\Styles\images\field_login.png" />
+    <Content Include="Tiffany\Styles\images\field_password.png" />
+    <Content Include="Tiffany\Styles\images\filter.png" />
+    <Content Include="Tiffany\Styles\images\footer.png" />
+    <Content Include="Tiffany\Styles\images\foto.jpg" />
+    <Content Include="Tiffany\Styles\images\foto2.jpg" />
+    <Content Include="Tiffany\Styles\images\fotorama%402x.png" />
+    <Content Include="Tiffany\Styles\images\fotorama.png" />
+    <Content Include="Tiffany\Styles\images\hand.png" />
+    <Content Include="Tiffany\Styles\images\header.jpg" />
+    <Content Include="Tiffany\Styles\images\icon_facebook.png" />
+    <Content Include="Tiffany\Styles\images\icon_google.png" />
+    <Content Include="Tiffany\Styles\images\icon_instagram.png" />
+    <Content Include="Tiffany\Styles\images\icon_twitter.png" />
+    <Content Include="Tiffany\Styles\images\icon_vk.png" />
+    <Content Include="Tiffany\Styles\images\input1.png" />
+    <Content Include="Tiffany\Styles\images\left_menu.png" />
+    <Content Include="Tiffany\Styles\images\login_icon.png" />
+    <Content Include="Tiffany\Styles\images\logo.png" />
+    <Content Include="Tiffany\Styles\images\main_menu.png" />
+    <Content Include="Tiffany\Styles\images\menu1.jpg" />
+    <Content Include="Tiffany\Styles\images\menu2.jpg" />
+    <Content Include="Tiffany\Styles\images\menu3.jpg" />
+    <Content Include="Tiffany\Styles\images\menu4.jpg" />
+    <Content Include="Tiffany\Styles\images\menu5.jpg" />
+    <Content Include="Tiffany\Styles\images\menu6.jpg" />
+    <Content Include="Tiffany\Styles\images\more_arrow.png" />
+    <Content Include="Tiffany\Styles\images\number.png" />
+    <Content Include="Tiffany\Styles\images\phone.png" />
+    <Content Include="Tiffany\Styles\images\rating.png" />
+    <Content Include="Tiffany\Styles\images\request.png" />
+    <Content Include="Tiffany\Styles\images\selects.png" />
+    <Content Include="Tiffany\Styles\images\selects1.png" />
+    <Content Include="Tiffany\Styles\images\selects2.png" />
+    <Content Include="Tiffany\Styles\images\selects3.png" />
+    <Content Include="Tiffany\Styles\images\selects4.png" />
+    <Content Include="Tiffany\Styles\images\selects_arrow.png" />
+    <Content Include="Tiffany\Styles\images\services.png" />
+    <Content Include="Tiffany\Styles\images\services_item.png" />
+    <Content Include="Tiffany\Styles\images\slider.png" />
+    <Content Include="Tiffany\Styles\images\slider1.jpg" />
+    <Content Include="Tiffany\Styles\images\slider_left.png" />
+    <Content Include="Tiffany\Styles\images\slider_pagination.png" />
+    <Content Include="Tiffany\Styles\images\slider_right.png" />
+    <Content Include="Tiffany\Styles\images\spec_price.png" />
+    <Content Include="Tiffany\Styles\images\star.png" />
+    <Content Include="Tiffany\Styles\images\submit.png" />
+    <Content Include="Tiffany\Styles\images\sub_triangle.png" />
+    <Content Include="Tiffany\Styles\images\textarea.png" />
+    <Content Include="Tiffany\Styles\images\top_menu_sep.png" />
+    <Content Include="Tiffany\Styles\images\tourism.jpg" />
+    <Content Include="Tiffany\Styles\images\tour_item.png" />
+    <Content Include="Tiffany\Styles\images\tour_search_countries.png" />
+    <Content Include="Tiffany\Styles\images\welcome.png" />
+    <Content Include="Tiffany\Styles\images\work_add.jpg" />
+    <Content Include="Tiffany\Styles\Site.css">
+      <DependentUpon>Site.less</DependentUpon>
+    </Content>
+    <Content Include="Tiffany\Styles\style.css" />
+    <Content Include="Tiffany\Theme.png" />
+    <Content Include="Tiffany\Theme.txt" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -167,6 +283,53 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="TheAdmin\Views\ErrorPage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tiffany\Content\Web.config" />
+    <Content Include="Tiffany\Placement.info" />
+    <Content Include="Tiffany\Scripts\Web.config" />
+    <Content Include="Tiffany\Static\fonts\cuprum-regular-webfont.eot" />
+    <Content Include="Tiffany\Static\fonts\cuprum-regular-webfont.ttf" />
+    <Content Include="Tiffany\Static\fonts\cuprum-regular-webfont.woff" />
+    <Content Include="Tiffany\Static\fonts\neosanspro-bold-webfont.eot" />
+    <Content Include="Tiffany\Static\fonts\neosanspro-bold-webfont.ttf" />
+    <Content Include="Tiffany\Static\fonts\neosanspro-bold-webfont.woff" />
+    <Content Include="Tiffany\Static\fonts\neosanspro-light-webfont.eot" />
+    <Content Include="Tiffany\Static\fonts\neosanspro-light-webfont.ttf" />
+    <Content Include="Tiffany\Static\fonts\neosanspro-light-webfont.woff" />
+    <Content Include="Tiffany\Static\fonts\neosanspro-regular-webfont.eot" />
+    <Content Include="Tiffany\Static\fonts\neosanspro-regular-webfont.ttf" />
+    <Content Include="Tiffany\Static\fonts\neosanspro-regular-webfont.woff" />
+    <Content Include="Tiffany\Styles\fonts\cuprum-regular-webfont.eot" />
+    <Content Include="Tiffany\Styles\fonts\cuprum-regular-webfont.ttf" />
+    <Content Include="Tiffany\Styles\fonts\cuprum-regular-webfont.woff" />
+    <Content Include="Tiffany\Styles\fonts\neosanspro-bold-webfont.eot" />
+    <Content Include="Tiffany\Styles\fonts\neosanspro-bold-webfont.ttf" />
+    <Content Include="Tiffany\Styles\fonts\neosanspro-bold-webfont.woff" />
+    <Content Include="Tiffany\Styles\fonts\neosanspro-light-webfont.eot" />
+    <Content Include="Tiffany\Styles\fonts\neosanspro-light-webfont.ttf" />
+    <Content Include="Tiffany\Styles\fonts\neosanspro-light-webfont.woff" />
+    <Content Include="Tiffany\Styles\fonts\neosanspro-regular-webfont.eot" />
+    <Content Include="Tiffany\Styles\fonts\neosanspro-regular-webfont.ttf" />
+    <Content Include="Tiffany\Styles\fonts\neosanspro-regular-webfont.woff" />
+    <Content Include="Tiffany\Styles\Site.less" />
+    <Content Include="Tiffany\Styles\Web.config" />
+    <Content Include="Tiffany\Views\Branding.cshtml" />
+    <Content Include="Tiffany\Views\Content-Page.Summary.cshtml" />
+    <Content Include="Tiffany\Views\Document.cshtml" />
+    <Content Include="Tiffany\Views\Layout.cshtml" />
+    <Content Include="Tiffany\Views\Web.config" />
+    <Content Include="Tiffany\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tiffany\Styles\Site.css.map">
+      <DependentUpon>Site.css</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Contoso\" />
+    <Folder Include="TheJournalist\" />
+    <Folder Include="Tiffany\Zones\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

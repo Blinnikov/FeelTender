@@ -1132,6 +1132,23 @@ a.add_request {
   margin: 0 5px;
   color: #54bdbe;
 }
+/* Article */
+.article-column {
+  width: 720px;
+  float: left;
+  color: #585b5b;
+  font-size: 1.2em;
+}
+.article-column header {
+  margin-bottom: 1.6em;
+}
+.article-column header h1 {
+  margin-bottom: 3px;
+  font-size: 1.6em;
+}
+.article-column header .metadata {
+  color: #848484;
+}
 .content {
   padding: 26px 0 16px;
 }
