@@ -11,9 +11,11 @@
 }
 
 <div class="article">
-    <a href="@Url.ItemDisplayUrl((IContent)Model.ContentItem)" class="image">
-        <img width="182" height="163" src="@Url.Content(imagePreview)" alt="@Model.Title">
-    </a>
+    <div class="image">
+        <a href="@Url.ItemDisplayUrl((IContent)Model.ContentItem)">
+            <img width="182" height="163" src="@Url.Content(imagePreview)" alt="@Model.Title">
+        </a>
+    </div>
     <div class="info">
         <a class="title" href="@Url.ItemDisplayUrl((IContent)Model.ContentItem)">@Model.ContentItem.TitlePart.Title</a>
         <p>@body</p>
