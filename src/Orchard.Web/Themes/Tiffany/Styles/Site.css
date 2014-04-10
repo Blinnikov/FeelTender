@@ -1150,6 +1150,9 @@ a.add_request {
 .article-column header .metadata {
   color: #848484;
 }
+.article-column img {
+  max-width: 100%;
+}
 .content {
   padding: 26px 0 16px;
 }

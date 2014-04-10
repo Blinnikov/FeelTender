@@ -331,6 +331,9 @@
     <Folder Include="TheJournalist\" />
     <Folder Include="Tiffany\Zones\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tiffany\Views\User.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
