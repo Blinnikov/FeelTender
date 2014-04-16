@@ -1153,6 +1153,10 @@ a.add_request {
 .article-column img {
   max-width: 100%;
 }
+.article-column ul.tagged-posts {
+  list-style: none;
+  padding-left: 0;
+}
 .content {
   padding: 26px 0 16px;
 }
