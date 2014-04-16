@@ -334,6 +334,12 @@
   <ItemGroup>
     <Content Include="Tiffany\Views\User.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tiffany\Views\GoogleAnalytics.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tiffany\Views\YandexCounter.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
