@@ -1,0 +1,38 @@
+﻿@using FluentNHibernate.Utils
+@{
+    Model.PreviousText = T("<");
+    Model.NextText = T(">");
+    Model.Tag = "div";
+    Model.ItemTag = "-";
+    Model.Classes.Remove("pager");
+    Model.Classes.Add("left");
+    Model.Classes.Add("pagination");
+
+    var routeData = new RouteValueDictionary(ViewContext.RouteData.Values);
+    var queryString = ViewContext.HttpContext.Request.QueryString;
+    if (queryString != null) {
+        foreach (string key in queryString.Keys) {
+            if (key != null && !routeData.ContainsKey(key)) {
+                routeData[key] = queryString[key];
+            }
+        }
+    }
+
+    if (routeData.ContainsKey("id") && !HasText(routeData["id"])) {
+        routeData.Remove("id");
+    }
+
+    Model.Metadata.Type = "Pager_Links";
+    IHtmlString pagerLinks = Display(Model);
+    
+    
+    if (Model.RouteData != null) {
+        foreach (var rd in Model.RouteData.Values) {
+            routeData[rd.Key] = rd.Value;
+        }
+    }
+}
+
+@if (Model.TotalItemCount > 1) {
+        @pagerLinks
+}

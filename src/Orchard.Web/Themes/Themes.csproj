@@ -340,6 +340,9 @@
   <ItemGroup>
     <Content Include="Tiffany\Views\YandexCounter.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tiffany\Views\Pager.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
