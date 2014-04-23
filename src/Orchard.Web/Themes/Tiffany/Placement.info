@@ -6,6 +6,10 @@
       <Place Parts_Tags_ShowTags="Content:after"/>
     </Match>
   </Match>
+
+  <Match ContentType="StartPage">
+    <Place Parts_Common_Metadata="-"/>
+  </Match>
   <!-- Customize where the shapes are rendered -->
 
   <!-- 
